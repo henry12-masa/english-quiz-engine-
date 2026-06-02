@@ -277,3 +277,65 @@ window.quizData = [
   }
 
 ];
+
+const addWordData = [
+  ["apple","りんご"],["orange","オレンジ"],["banana","バナナ"],["grape","ぶどう"],["lemon","レモン"],
+  ["dog","犬"],["cat","猫"],["bird","鳥"],["fish","魚"],["horse","馬"],
+  ["book","本"],["pen","ペン"],["desk","机"],["chair","椅子"],["bag","かばん"],
+  ["water","水"],["milk","牛乳"],["coffee","コーヒー"],["tea","お茶"],["juice","ジュース"],
+  ["school","学校"],["teacher","先生"],["student","生徒"],["classroom","教室"],["homework","宿題"],
+  ["car","車"],["train","電車"],["bus","バス"],["airport","空港"],["station","駅"],
+  ["sun","太陽"],["moon","月"],["star","星"],["sky","空"],["rain","雨"],
+  ["snow","雪"],["wind","風"],["cloud","雲"],["weather","天気"],["season","季節"],
+  ["spring","春"],["summer","夏"],["autumn","秋"],["winter","冬"],["morning","朝"],
+  ["afternoon","午後"],["evening","夕方"],["night","夜"],["today","今日"],["tomorrow","明日"],
+  ["yesterday","昨日"],["Monday","月曜日"],["Tuesday","火曜日"],["Wednesday","水曜日"],["Thursday","木曜日"],
+  ["Friday","金曜日"],["Saturday","土曜日"],["Sunday","日曜日"],["family","家族"],["friend","友達"],
+  ["mother","母"],["father","父"],["brother","兄・弟"],["sister","姉・妹"],["child","子ども"],
+  ["house","家"],["room","部屋"],["window","窓"],["door","ドア"],["kitchen","台所"],
+  ["bathroom","浴室"],["garden","庭"],["city","都市"],["country","国"],["street","通り"],
+  ["river","川"],["mountain","山"],["sea","海"],["island","島"],["forest","森"],
+  ["red","赤"],["blue","青"],["green","緑"],["yellow","黄色"],["white","白"],
+  ["black","黒"],["big","大きい"],["small","小さい"],["long","長い"],["short","短い"],
+  ["fast","速い"],["slow","遅い"],["hot","暑い・熱い"],["cold","寒い・冷たい"],["new","新しい"],
+  ["old","古い"],["good","良い"],["bad","悪い"],["easy","簡単な"],["difficult","難しい"],
+  ["important","重要な"],["beautiful","美しい"],["strong","強い"],["weak","弱い"],["happy","幸せな"],
+  ["sad","悲しい"],["angry","怒った"],["tired","疲れた"],["hungry","お腹がすいた"],["busy","忙しい"],
+  ["kind","親切な"],["famous","有名な"],["safe","安全な"],["dangerous","危険な"],["free","無料の・自由な"],
+  ["run","走る"],["walk","歩く"],["eat","食べる"],["drink","飲む"],["sleep","眠る"],
+  ["read","読む"],["write","書く"],["speak","話す"],["listen","聞く"],["see","見る"],
+  ["watch","見る"],["open","開ける"],["close","閉める"],["buy","買う"],["sell","売る"],
+  ["make","作る"],["use","使う"],["work","働く"],["live","住む"],["need","必要とする"],
+  ["want","欲しい"],["think","考える"],["learn","学ぶ"],["teach","教える"],["remember","覚えている"],
+  ["forget","忘れる"],["start","始める"],["finish","終える"],["choose","選ぶ"],["change","変える"],
+  ["move","動く"],["wait","待つ"],["meet","会う"],["call","電話する"],["send","送る"],
+  ["receive","受け取る"],["find","見つける"],["lose","失う"],["bring","持ってくる"],["take","取る・持っていく"],
+  ["music","音楽"],["movie","映画"],["game","ゲーム"],["picture","絵・写真"],["story","物語"],
+  ["question","質問"],["answer","答え"],["problem","問題"],["idea","考え"],["time","時間"],
+  ["money","お金"],["food","食べ物"],["breakfast","朝食"],["lunch","昼食"],["dinner","夕食"],
+  ["rice","米・ご飯"],["bread","パン"],["meat","肉"],["vegetable","野菜"],["fruit","果物"],
+  ["doctor","医者"],["nurse","看護師"],["police officer","警察官"],["driver","運転手"],["cook","料理人"],
+  ["farmer","農家"],["library","図書館"],["hospital","病院"],["restaurant","レストラン"],["hotel","ホテル"],
+  ["bank","銀行"],["post office","郵便局"],["shop","店"],["park","公園"],["ticket","切符"],
+  ["map","地図"],["key","鍵"],["card","カード"],["letter","手紙"],["newspaper","新聞"],
+  ["magazine","雑誌"],["camera","カメラ"],["phone","電話"],["computer","コンピューター"],["email","メール"],
+  ["head","頭"],["eye","目"],["ear","耳"],["mouth","口"],["hand","手"],
+  ["foot","足"],["face","顔"],["heart","心臓・心"],["shirt","シャツ"],["shoes","靴"]
+];
+
+const wordMeanings = addWordData.map(x => x[1]);
+
+addWordData.forEach(([word, answer]) => {
+  const wrongs = wordMeanings
+    .filter(m => m !== answer)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+
+  window.quizData.push({
+    q: word + " の意味は？",
+    a: answer,
+    c: [answer, ...wrongs]
+  });
+});
+
+window.quizData = window.quizData.slice(0, 200);
