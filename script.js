@@ -1,13 +1,7 @@
 const quizzes = [
-  { id: "jisei", name: "辞世の句", file: "data/jisei.js" },
-  { id: "castle", name: "城クイズ", file: "data/castle.js" },
-  { id: "chunibyo", name: "中二病歴史用語", file: "data/chunibyo.js" },
-  { id: "heritage", name: "世界遺産", file: "data/heritage.js" },
-  { id: "history", name: "歴史クイズ", file: "data/history.js" },
-  { id: "ijin", name: "偉人クイズ", file: "data/ijin.js" },
-  { id: "kamon", name: "家紋クイズ", file: "data/kamon.js" },
-  { id: "meigen", name: "名言クイズ", file: "data/meigen.js" },
-  { id: "sengoku", name: "戦国クイズ", file: "data/sengoku.js" }
+  { id: "english100", name: "英語クイズ100問", file: "data/english100.js" },
+  { id: "word", name: "英単語クイズ", file: "data/word.js" },
+  { id: "toeic", name: "TOEICクイズ", file: "data/toeic.js" }
 ];
 
 let questions = [];
