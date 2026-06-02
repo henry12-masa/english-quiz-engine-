@@ -52,11 +52,16 @@ function loadQuiz(quiz) {
   script.src = quiz.file + "?v=" + Date.now();
 
   script.onload = () => {
+    if (!window.quizData || !Array.isArray(window.quizData) || window.quizData.length === 0) {
+      questionEl.textContent = quiz.name + " の問題データがありません。";
+      return;
+    }
+
     startQuiz();
   };
 
   script.onerror = () => {
-    questionEl.textContent = `${quiz.name} のデータを読み込めませんでした。`;
+    questionEl.textContent = quiz.name + " のデータを読み込めませんでした。";
   };
 
   document.body.appendChild(script);
