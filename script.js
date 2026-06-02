@@ -49,7 +49,7 @@ function loadQuiz(quiz) {
   scoreEl.textContent = "スコア:0";
 
   const script = document.createElement("script");
-  script.src = quiz.file;
+  script.src = quiz.file + "?v=" + Date.now();
 
   script.onload = () => {
     startQuiz();
