@@ -275,3 +275,141 @@ window.quizData = [
   }
 
 ];
+
+const addToeicWords = [
+  ["branch","支店"],["headquarters","本社"],["client","取引先"],["supplier","供給業者"],
+  ["shipment","出荷"],["inventory","在庫"],["receipt","領収書"],["refund","返金"],
+  ["discount","割引"],["fee","料金"],["expense","経費"],["revenue","収益"],
+  ["appointment","予約・約束"],["candidate","候補者"],["interview","面接"],["resume","履歴書"],
+  ["position","職位"],["benefit","福利厚生・利益"],["policy","方針"],["procedure","手順"],
+  ["regulation","規則"],["requirement","必要条件"],["qualification","資格"],["estimate","見積もり"],
+  ["confirm","確認する"],["approve","承認する"],["submit","提出する"],["review","確認する・見直す"],
+  ["attend","出席する"],["participate","参加する"],["announce","発表する"],["notify","通知する"],
+  ["reserve","予約する"],["expand","拡大する"],["launch","開始する・発売する"],["operate","運営する"],
+  ["install","設置する"],["repair","修理する"],["replace","交換する"],["improve","改善する"],
+  ["delay","遅延"],["cancel","中止する"],["postpone","延期する"],["hire","雇う"],
+  ["retire","退職する"],["transfer","異動する・転送する"],["assign","割り当てる"],["request","依頼する"],
+  ["respond","返答する"],["enclose","同封する"],["attach","添付する"],["annual","年1回の"],
+  ["monthly","月1回の"],["temporary","一時的な"],["permanent","恒久的な"],["urgent","緊急の"],
+  ["efficient","効率的な"],["reliable","信頼できる"],["competitive","競争力のある"],["additional","追加の"],
+  ["previous","以前の"],["current","現在の"],["local","地元の"],["international","国際的な"],
+  ["domestic","国内の"],["available","利用可能な"],["unavailable","利用できない"],["complete","完了した"],
+  ["necessary","必要な"],["optional","任意の"],["accurate","正確な"],["appropriate","適切な"],
+  ["convenient","便利な"],["successful","成功した"],["valuable","価値のある"],["reasonable","妥当な"],
+  ["significant","重要な"],["frequent","頻繁な"],["regular","定期的な"],["immediate","即時の"],
+  ["various","さまざまな"],["entire","全体の"],["specific","特定の"],["recent","最近の"],
+  ["due","期限の"],["valid","有効な"],["expired","期限切れの"],["damaged","破損した"],
+  ["missing","不足している"],["detailed","詳細な"],["brief","簡潔な"],["official","公式の"],
+  ["financial","財務の"],["technical","技術的な"],["administrative","管理上の"],["commercial","商業の"],
+  ["manufacturing","製造"],["construction","建設"],["distribution","流通"],["advertisement","広告"],
+  ["survey","調査"],["analysis","分析"],["performance","業績"],["productivity","生産性"],
+  ["quality","品質"],["facility","施設"],["location","場所"],["destination","目的地"],
+  ["accommodation","宿泊施設"],["itinerary","旅程"],["departure","出発"],["arrival","到着"],
+  ["boarding pass","搭乗券"],["baggage","手荷物"],["customs","税関"],["transportation","交通・輸送"],
+  ["commute","通勤する"],["vehicle","車両"],["parking","駐車"],["entrance","入口"],
+  ["exit","出口"],["elevator","エレベーター"],["renovation","改装"],["inspection","点検"],
+  ["reservation","予約"],["cancellation","キャンセル"],["complaint","苦情"],["inquiry","問い合わせ"],
+  ["instruction","指示"],["description","説明"],["summary","要約"],["manual","説明書"],
+  ["agreement","同意・契約"],["signature","署名"],["permission","許可"],["access","アクセス・利用権"],
+  ["password","パスワード"],["account","口座・アカウント"],["balance","残高"],["payment","支払い"],
+  ["deposit","預金・保証金"],["withdrawal","引き出し"],["loan","融資"],["interest","利息"]
+];
+
+const toeicMeanings = addToeicWords.map(x => x[1]);
+
+addToeicWords.forEach(([word, answer]) => {
+  const wrongs = toeicMeanings
+    .filter(m => m !== answer)
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+
+  window.quizData.push({
+    q: word + " の意味は？",
+    a: answer,
+    c: [answer, ...wrongs]
+  });
+});
+
+const addToeicGrammar = [
+  {
+    q:"Please contact us ____ you have any questions.",
+    a:"if",
+    c:["if","because","although","unless"]
+  },
+  {
+    q:"The office is located ____ the second floor.",
+    a:"on",
+    c:["on","in","at","for"]
+  },
+  {
+    q:"The manager asked me ____ the report.",
+    a:"to revise",
+    c:["to revise","revise","revising","revised"]
+  },
+  {
+    q:"The seminar is open ____ all employees.",
+    a:"to",
+    c:["to","for","with","by"]
+  },
+  {
+    q:"Sales increased ____ 15 percent.",
+    a:"by",
+    c:["by","to","at","from"]
+  },
+  {
+    q:"The price was reduced ____ $50.",
+    a:"to",
+    c:["to","by","at","from"]
+  },
+  {
+    q:"Mr. Smith is ____ charge of the project.",
+    a:"in",
+    c:["in","on","at","for"]
+  },
+  {
+    q:"The printer is currently ____ repair.",
+    a:"under",
+    c:["under","below","during","among"]
+  },
+  {
+    q:"Please make sure ____ the door is locked.",
+    a:"that",
+    c:["that","what","which","who"]
+  },
+  {
+    q:"The form must be submitted ____ advance.",
+    a:"in",
+    c:["in","on","at","by"]
+  },
+  {
+    q:"Our team has been working ____ the proposal.",
+    a:"on",
+    c:["on","at","in","for"]
+  },
+  {
+    q:"The package will arrive ____ Monday.",
+    a:"on",
+    c:["on","in","at","to"]
+  },
+  {
+    q:"The meeting will be held ____ the conference room.",
+    a:"in",
+    c:["in","on","at","by"]
+  },
+  {
+    q:"Employees are required ____ safety training.",
+    a:"to attend",
+    c:["to attend","attend","attending","attended"]
+  },
+  {
+    q:"The document should be sent ____ email.",
+    a:"by",
+    c:["by","on","with","for"]
+  }
+];
+
+window.quizData.push(...addToeicGrammar);
+
+window.quizData = window.quizData.slice(0, 200);
+
+
